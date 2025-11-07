@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en"
+    x-data="{ mobileMenuOpen: false, activeSection: 'academics', language: 'en', languageDropdownOpen: false }">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Programs & Curriculum | Circle Spring Academy Thika Kenya</title>
+    <meta name="description"
+        content="Explore our comprehensive academic programs at Circle Spring Academy in Salama Estate, Thika. Quality primary education with CBC curriculum, kindergarten to PP2 programs.">
+    <meta name="keywords"
+        content="academic programs Thika, primary education Kenya, CBC curriculum, kindergarten Thika, PP1 PP2 programs, best schools Salama Estate, quality education Thika">
+    <meta name="author" content="Circle Spring Academy">
+
+    <!-- Add preload for critical resources -->
+    <link rel="preload" href="src/js/app.js" as="script">
+    <link rel="preload" href="src/imgs/logo-BBA39KOS.webp" as="image">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        as="style">
+
+    <!-- Add Open Graph tags for social sharing -->
+    <meta property="og:title" content="Academic Programs & Curriculum | Circle Spring Academy Thika Kenya">
+    <meta property="og:description"
+        content="Quality primary education with CBC curriculum, kindergarten to PP2 programs at Circle Spring Academy in Salama Estate, Thika">
+    <meta property="og:image" content="src/imgs/logo-BBA39KOS.webp">
+    <meta property="og:url" content="https://www.circlespringschool.co.ke/academics.html">
+    <meta property="og:type" content="website">
+
+    <!-- Add Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Academic Programs at Circle Spring Academy">
+    <meta name="twitter:description" content="Quality primary education with CBC curriculum in Thika">
+
+    <!-- Add canonical URL -->
+    <link rel="canonical" href="https://www.circlespringschool.co.ke/academics.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/imgs/logo-BBA39KOS.webp">
+
+    <link rel="stylesheet" href="src/styles/style.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Circle Spring Academy",
+      "description": "Circle Spring Academy in Salama Estate, Thika offers quality education with holistic development through comprehensive academic programs",
+      "url": "https://www.circlespringschool.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Salama Estate",
+        "addressLocality": "Thika",
+        "addressRegion": "Kiambu",
+        "addressCountry": "Kenya"
+      },
+      "telephone": "+254-111-427-110",
+      "email": "circlespringschool@gmail.com",
+      "areaServed": "Thika, Nairobi, Kenya",
+      "educationalLevel": "Primary education",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Academic Programs",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "EducationalOccupationalProgram",
+              "name": "Kindergarten Program",
+              "description": "Play-based learning for children aged 2-6 years"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "EducationalOccupationalProgram",
+              "name": "Primary Education",
+              "description": "Comprehensive primary education following CBC curriculum"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #8B2635 0%, #C44569 100%);
+        }
+
+        .section-title {
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #8B2635;
+        }
+
+        .requirement-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .term-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid;
+        }
+
+        .term-card:hover {
+            transform: translateX(5px);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 48, 48, 0.3);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="src/imgs/logo-BBA39KOS.webp"
+                        alt="Circle Spring Academy Logo - Best Primary School in Salama Estate, Thika"
+                        class="h-12 w-12 rounded-lg mr-3">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="academics.html" class="font-semibold text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                    <li><a href="student-life.html"
+                            class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'"></a></li>
+                    <li><a href="activities.html" class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                    <li><a href="aboutcirclesprings.html"
+                            class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'About' : 'Kuhusu'"></a></li>
+                    <li><a href="contactus.html" class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Contact' : 'Wasiliana'"></a></li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-charcoal px-3 py-1 rounded-md text-sm font-medium transition flex items-center">
+                        <span x-text="language === 'en' ? 'English' : 'Kiswahili'"></span>
+                        <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false"
+                            class="flex items-center hover:text-deep-carmine">
+                            <i class="fas fa-globe-americas mr-2 text-charcoal"></i>
+                            English
+                        </a>
+                        <a href="#" @click="language = 'sw'; open = false"
+                            class="flex items-center hover:text-deep-carmine">
+                            <i class="fas fa-globe-africa mr-2 text-charcoal"></i>
+                            Kiswahili
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <!-- Language Dropdown for Mobile -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-charcoal px-2 py-1 rounded text-xs font-medium flex items-center">
+                        <span x-text="language === 'en' ? 'EN' : 'SW'"></span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false" class="hover:text-deep-carmine">English</a>
+                        <a href="#" @click="language = 'sw'; open = false" class="hover:text-deep-carmine">Kiswahili</a>
+                    </div>
+                </div>
+
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="text-charcoal hover:text-deep-carmine text-xl transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white shadow-lg py-4 px-4">
+            <ul class="space-y-3">
+                <li>
+                    <a href="academics.html" class="block font-semibold text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Academics' : 'Masomo'">
+                    </a>
+                </li>
+                <li>
+                    <a href="student-life.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false"
+                        x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'">
+                    </a>
+                </li>
+                <li>
+                    <a href="activities.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Activities' : 'Shughuli'">
+                    </a>
+                </li>
+                <li>
+                    <a href="aboutcirclesprings.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'About' : 'Kuhusu'">
+                    </a>
+                </li>
+                <li>
+                    <a href="contactus.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Contact' : 'Wasiliana'">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+                x-text="language === 'en' ? 'Academic Excellence' : 'Ubora wa Kitaaluma'"></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto"
+                x-text="language === 'en' ? 'At Circle Spring Academy, we provide quality education with a comprehensive curriculum that nurtures young minds for a successful future.' : 'Katika Circle Spring Academy, tunatoa elimu bora na mtaala kamili unaolea akili za vijana kwa mustakabali wenye mafanikio.'">
+            </p>
+            <a href="#academic-programs"
+                class="bg-white text-deep-carmine font-bold py-4 px-8 rounded-full inline-block hover:bg-gray-100 transition">Explore
+                Our Programs</a>
+        </div>
+    </section>
+
+    <!-- Academic Programs Overview -->
+    <section id="academic-programs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Academic Programs' : 'Programu Zetu za Kitaaluma'"></h2>
+                <p class="text-lg text-charcoal max-w-3xl mx-auto mt-6"
+                    x-text="language === 'en' ? 'We offer a comprehensive educational journey from early childhood through primary education, following the Competency-Based Curriculum (CBC) to develop well-rounded individuals.' : 'Tunatoa safari kamili ya kielimu kutoka utotoni hadi elimu ya msingi, tukifuata Mtaala wa Msingi wa Uwezo (CBC) ili kukuza watu wenye ujuzi mwingi.'">
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Early Years Program -->
+                <div class="bg-white rounded-lg p-6">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-child text-deep-carmine text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3"
+                        x-text="language === 'en' ? 'Early Years (2-4 years)' : 'Miaka ya Mapema (miaka 2-4)'"></h3>
+                    <p class="text-charcoal mb-4"
+                        x-text="language === 'en' ? 'Play-based learning environment that fosters social, emotional, and cognitive development through structured activities and exploration.' : 'Mazingira ya kujifunza kwa michezo yanayokuza maendeleo ya kijamii, kihemko na kiakili kupitia shughuli zilizopangwa na uchunguzi.'">
+                    </p>
+                    <ul class="text-charcoal space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-deep-carmine mr-2"></i> <span
+                                x-text="language === 'en' ? 'Play Group & Kindergarten' : 'Kikundi cha Michezo na Chekechea'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-deep-carmine mr-2"></i> <span
+                                x-text="language === 'en' ? 'Social Skills Development' : 'Maendeleo ya Ujuzi wa Kijamii'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-deep-carmine mr-2"></i> <span
+                                x-text="language === 'en' ? 'Language & Communication' : 'Lugha na Mawasiliano'"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pre-Primary Program -->
+                <div class="bg-white rounded-lg p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-puzzle-piece text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3"
+                        x-text="language === 'en' ? 'Pre-Primary (4-6 years)' : 'Kabla ya Msingi (miaka 4-6)'"></h3>
+                    <p class="text-charcoal mb-4"
+                        x-text="language === 'en' ? 'Foundation stage focusing on literacy, numeracy, and creative expression to prepare children for primary education.' : 'Hatua ya msingi inayolenga kusoma na kuandika, hesabu, na kujieleza kwa ubunifu ili kuwaandaa watoto kwa elimu ya msingi.'">
+                    </p>
+                    <ul class="text-charcoal space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'PP1 & PP2 Programs' : 'Programu za PP1 na PP2'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Literacy & Numeracy Skills' : 'Ujuzi wa Kusoma na Kuandika na Hesabu'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Creative Arts & Expression' : 'Sanaa za Ubunifu na Kujieleza'"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Primary Program -->
+                <div class="bg-white rounded-lg p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3"
+                        x-text="language === 'en' ? 'Primary Education (6-13 years)' : 'Elimu ya Msingi (miaka 6-13)'">
+                    </h3>
+                    <p class="text-charcoal mb-4"
+                        x-text="language === 'en' ? 'Comprehensive primary education following CBC curriculum with focus on competencies, values, and holistic development.' : 'Elimu kamili ya msingi inayofuata mtaala wa CBC na kulenga uwezo, maadili, na maendeleo ya jumla.'">
+                    </p>
+                    <ul class="text-charcoal space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Grades 1-6 Curriculum' : 'Mtaala wa Darasa la 1-6'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Competency-Based Learning' : 'Kujifunza Kulingana na Uwezo'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Holistic Development' : 'Maendeleo ya Jumla'"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Approach Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span
+                        class="inline-block px-4 py-2 bg-red-100 text-deep-carmine rounded-full text-sm font-semibold mb-4"
+                        x-text="language === 'en' ? 'Our Educational Approach' : 'Mbinu Yetu ya Kuelimisha'"></span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6"
+                        x-text="language === 'en' ? 'Competency-Based Curriculum (CBC)' : 'Mtaala wa Msingi wa Uwezo (CBC)'">
+                    </h2>
+
+                    <div class="space-y-6">
+                        <p class="text-lg text-charcoal leading-relaxed"
+                            x-text="language === 'en' ? 'At Circle Spring Academy, we follow the Competency-Based Curriculum (CBC) which focuses on developing skills, knowledge, and values that enable learners to become engaged, empowered, and ethical citizens.' : 'Katika Circle Spring Academy, tunafuata Mtaala wa Msingi wa Uwezo (CBC) unaolenga kuendeleza ujuzi, maarifa, na maadili ambayo yanawawezesha wanafunzi kuwa raia waliojihusisha, wenye nguvu, na wa maadili.'">
+                        </p>
+                        <p class="text-lg text-charcoal leading-relaxed"
+                            x-text="language === 'en' ? 'Our approach emphasizes practical application of knowledge, critical thinking, creativity, and communication skills to prepare students for real-world challenges.' : 'Mbinu yetu inasisitiza matumizi ya vitendo ya maarifa, kufikiri kwa kina, ubunifu, na ujuzi wa mawasiliano ili kuwaandaa wanafunzi kwa changamoto za ulimwengu wa kweli.'">
+                        </p>
+                    </div>
+
+                    <!-- Key CBC Pillars -->
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-brain text-deep-carmine"></i>
+                            </div>
+                            <span class="text-charcoal font-medium"
+                                x-text="language === 'en' ? 'Critical Thinking' : 'Kufikiri kwa kina'"></span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-lightbulb text-deep-carmine"></i>
+                            </div>
+                            <span class="text-charcoal font-medium"
+                                x-text="language === 'en' ? 'Creativity & Innovation' : 'Ubunifu na Uvumbuzi'"></span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-comments text-deep-carmine"></i>
+                            </div>
+                            <span class="text-charcoal font-medium"
+                                x-text="language === 'en' ? 'Communication' : 'Mawasiliano'"></span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-2 rounded-lg mr-3">
+                                <i class="fas fa-hands-helping text-deep-carmine"></i>
+                            </div>
+                            <span class="text-charcoal font-medium"
+                                x-text="language === 'en' ? 'Collaboration' : 'Ushirikiano'"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative rounded-lg overflow-hidden shadow-lg">
+                        <img src="src/imgs/kinda.webp"
+                            alt="Students learning in classroom at Circle Spring Academy Thika"
+                            class="w-full h-80 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold"
+                                    x-text="language === 'en' ? 'Interactive Learning Environment' : 'Mazingira ya Kujifunza ya Kuingiliana'">
+                                </h3>
+                                <p class="mt-2"
+                                    x-text="language === 'en' ? 'Our classrooms are designed to foster collaboration and active learning' : 'Madarasa yetu yameundwa kukuza ushirikiano na kujifunza kwa vitendo'">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="py-16 bg-white" x-data="{ activeTab: 'playgroup' }">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Academic Programs' : 'Programu Zetu za Kitaaluma'"></h2>
+                <p class="text-lg text-charcoal max-w-2xl mx-auto"
+                    x-text="language === 'en' ? 'Age-appropriate programs designed to nurture and develop young minds at every stage' : 'Programu zinazolingana na umri zilizoundwa kulea na kuendeleza akili za watoto katika kila hatua'">
+                </p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-nowrap overflow-x-auto py-2 mb-8 hide-scrollbar">
+                <div class="flex gap-1 min-w-max px-4">
+                    <button @click="activeTab = 'playgroup'"
+                        class="px-2 py-1.5 md:px-4 md:py-3 rounded-lg font-medium text-xs md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                        :class="activeTab === 'playgroup' ? 'bg-red-700 text-white shadow-md' : 'bg-white text-charcoal hover:bg-gray-100'"
+                        x-text="language === 'en' ? 'Play Group' : 'Play Group'">
+                    </button>
+                    <button @click="activeTab = 'kindergarten'"
+                        class="px-2 py-1.5 md:px-4 md:py-3 rounded-lg font-medium text-xs md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                        :class="activeTab === 'kindergarten' ? 'bg-red-700 text-white shadow-md' : 'bg-white text-charcoal hover:bg-gray-100'"
+                        x-text="language === 'en' ? 'Kindergarten' : 'KG'">
+                    </button>
+                    <button @click="activeTab = 'pp1'"
+                        class="px-2 py-1.5 md:px-4 md:py-3 rounded-lg font-medium text-xs md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                        :class="activeTab === 'pp1' ? 'bg-red-700 text-white shadow-md' : 'bg-white text-charcoal hover:bg-gray-100'"
+                        x-text="language === 'en' ? 'PP1' : 'PP1'">
+                    </button>
+                    <button @click="activeTab = 'pp2'"
+                        class="px-2 py-1.5 md:px-4 md:py-3 rounded-lg font-medium text-xs md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                        :class="activeTab === 'pp2' ? 'bg-red-700 text-white shadow-md' : 'bg-white text-charcoal hover:bg-gray-100'"
+                        x-text="language === 'en' ? 'PP2' : 'PP2'">
+                    </button>
+                </div>
+            </div>
+            <!-- Tab Content -->
+            <!-- Play Group Tab -->
+            <div x-show="activeTab === 'playgroup'" class="rounded-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 rounded-lg">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4"
+                            x-text="language === 'en' ? 'Play Group (2-3 years)' : 'Kikundi cha Michezo (miaka 2-3)'">
+                        </h3>
+                        <p class="text-lg text-charcoal mb-6"
+                            x-text="language === 'en' ? 'Our Play Group program focuses on developing basic social skills, language acquisition, and sensory exploration through structured play and guided activities.' : 'Programu yetu ya Kikundi cha Michezo inalenga kuendeleza ujuzi wa kijamii, upataji wa lugha, na uchunguzi wa hisia kupitia michezo iliyopangwa na shughuli zilizoongozwa.'">
+                        </p>
+
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-charcoal mb-3"
+                                x-text="language === 'en' ? 'Key Focus Areas:' : 'Maeneo Muhimu ya Kulenga:'"></h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-red-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Social interaction and sharing' : 'Mwingiliano wa kijamii na kushiriki'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-red-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Basic vocabulary development' : 'Maendeleo ya msamiati wa msingi'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-red-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Fine and gross motor skills' : 'Ujuzi wa motor ndogo na kubwa'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-red-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Color and shape recognition' : 'Kutambua rangi na maumbo'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-red-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Following simple instructions' : 'Kufuata maagizo rahisi'"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-lg border border-red-200">
+                            <h5 class="font-bold text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Daily Activities Include:' : 'Shughuli za Kila Siku Zinajumuisha:'">
+                            </h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Circle Time' : 'Muda wa Duara'"></span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Art & Craft' : 'Sanaa na Ufundi'"></span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Story Time' : 'Muda wa Hadithi'"></span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Outdoor Play' : 'Michezo ya Nje'"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="src/imgs/playgroup.svg" alt="Play group activities at Circle Spring Academy Thika"
+                            class="w-full h-64 md:h-80 object-fit img-responsive img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kindergarten Tab -->
+            <div x-show="activeTab === 'kindergarten'" class="rounded-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 rounded-lg">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4"
+                            x-text="language === 'en' ? 'Kindergarten (3-4 years)' : 'Chekechea (miaka 3-4)'"></h3>
+                        <p class="text-lg text-charcoal mb-6"
+                            x-text="language === 'en' ? 'Our Kindergarten program builds on foundational skills with more structured learning activities, introducing early literacy and numeracy concepts through interactive play and exploration.' : 'Programu yetu ya Chekechea inajenga juu ya ujuzi wa msingi na shughuli za kujifunza zilizopangwa zaidi, ikianzisha dhana za awali za kusoma na kuandika na hesabu kupitia michezo ya kushirikisha na uchunguzi.'">
+                        </p>
+
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-charcoal mb-3"
+                                x-text="language === 'en' ? 'Key Focus Areas:' : 'Maeneo Muhimu ya Kulenga:'"></h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Letter and number recognition' : 'Kutambua herufi na nambari'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Phonemic awareness and pre-writing skills' : 'Ufahamu wa sauti na ujuzi wa kabla ya kuandika'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Problem-solving and critical thinking' : 'Kutatua matatizo na kufikiri kwa kina'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Creative expression through art and music' : 'Kujieleza kwa ubunifu kupitia sanaa na muziki'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Developing independence and self-help skills' : 'Kuendeleza uhuru na ujuzi wa kujisaidia'"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-lg border border-blue-200">
+                            <h5 class="font-bold text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Daily Activities Include:' : 'Shughuli za Kila Siku Zinajumuisha:'">
+                            </h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Phonics' : 'Fonetik'"></span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Number Work' : 'Kazi ya Nambari'"></span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Music & Movement' : 'Muziki na Mwendo'"></span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Science Exploration' : 'Uchunguzi wa Sayansi'"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="src/imgs/kindergarten.svg"
+                            alt="Kindergarten activities at Circle Spring Academy Thika"
+                            class="w-full h-64 md:h-80 object-fit img-responsive img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PP1 Tab -->
+            <div x-show="activeTab === 'pp1'" class="rounded-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 rounded-lg">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4"
+                            x-text="language === 'en' ? 'PP1 (4-5 years)' : 'PP1 (miaka 4-5)'"></h3>
+                        <p class="text-lg text-charcoal mb-6"
+                            x-text="language === 'en' ? 'Our PP1 program prepares children for more formal learning with a balanced approach that develops literacy, numeracy, and social skills while maintaining the joy of discovery through hands-on activities.' : 'Programu yetu ya PP1 inawaandaa watoto kwa kujifunza rasmi zaidi kwa mbinu ya uwiano inayoendeleza ujuzi wa kusoma na kuandika, hesabu, na ujuzi wa kijamii huku ikiendeleza furaha ya kugundua kupitia shughuli za vitendo.'">
+                        </p>
+
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-charcoal mb-3"
+                                x-text="language === 'en' ? 'Key Focus Areas:' : 'Maeneo Muhimu ya Kulenga:'"></h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Early reading and writing skills' : 'Ujuzi wa kusoma na kuandika mapema'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Basic math concepts and operations' : 'Dhana za msingi za hesabu na shughuli'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Science exploration and discovery' : 'Uchunguzi wa sayansi na kugundua'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Developing longer attention spans' : 'Kuendeleza muda mrefu wa umakini'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Cooperative play and group projects' : 'Michezo ya ushirikiano na miradi ya kikundi'"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-lg border border-green-200">
+                            <h5 class="font-bold text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Daily Activities Include:' : 'Shughuli za Kila Siku Zinajumuisha:'">
+                            </h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Reading Readiness' : 'Kuwa Tayari Kusoma'"></span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Mathematics' : 'Hisabati'"></span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Environmental Studies' : 'Masomo ya Mazingira'"></span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Creative Arts' : 'Sanaa za Ubunifu'"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="src/imgs/pp1.svg" alt="PP1 classroom activities at Circle Spring Academy Thika"
+                            class="w-full h-64 md:h-80 object-fit img-responsive img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PP2 Tab -->
+            <div x-show="activeTab === 'pp2'" class="rounded-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 rounded-lg">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4"
+                            x-text="language === 'en' ? 'PP2 (5-6 years)' : 'PP2 (miaka 5-6)'"></h3>
+                        <p class="text-lg text-charcoal mb-6"
+                            x-text="language === 'en' ? 'Our PP2 program provides a comprehensive foundation for primary school readiness, focusing on advanced literacy, numeracy, and critical thinking skills while fostering independence and confidence.' : 'Programu yetu ya PP2 inatoa msingi kamili wa kuwa tayari kwa shule ya msingi, ikilenga ujuzi wa hali ya juu wa kusoma na kuandika, hesabu, na ujuzi wa kufikiri kwa kina huku ikikuza uhuru na kujiamini.'">
+                        </p>
+
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold text-charcoal mb-3"
+                                x-text="language === 'en' ? 'Key Focus Areas:' : 'Maeneo Muhimu ya Kulenga:'"></h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Reading fluency and comprehension' : 'Ufasaha wa kusoma na uelewa'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Mathematical problem-solving' : 'Kutatua matatizo ya hesabu'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Scientific inquiry and experimentation' : 'Uchunguzi wa kisayansi na majaribio'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Developing research and presentation skills' : 'Kuendeleza ujuzi wa utafiti na uwasilishaji'"></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-700 mt-1 mr-3"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'Leadership and responsibility' : 'Uongozi na uwajibikaji'"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-lg border border-purple-200">
+                            <h5 class="font-bold text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Daily Activities Include:' : 'Shughuli za Kila Siku Zinajumuisha:'">
+                            </h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Advanced Literacy' : 'Ujuzi wa Juu wa Kusoma na Kuandika'"></span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Numeracy Skills' : 'Ujuzi wa Hesabu'"></span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Creative Writing' : 'Uandishi Bora'"></span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                                    x-text="language === 'en' ? 'Project Work' : 'Kazi ya Mradi'"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="src/imgs/pp2.svg" alt="PP2 classroom activities at Circle Spring Academy Thika"
+                            class="w-full h-64 md:h-80 object-fit img-responsive img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4"
+                    x-text="language === 'en' ? 'Ready to Enroll Your Child?' : 'Uko Tayari Kumwandikisha Mtoto Wako?'">
+                </h3>
+                <p class="text-lg text-charcoal mb-6 max-w-2xl mx-auto"
+                    x-text="language === 'en' ? 'Join our nurturing educational community and give your child the best start to their learning journey.' : 'Jiunge na jamii yetu ya kuelimisha na uwe mwanzo mzuri kwa safari ya kujifunza kwa mtoto wako.'">
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contactus.html"
+                        class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-8 rounded-lg transition"
+                        x-text="language === 'en' ? 'Contact Admissions' : 'Wasiliana na Uandikishaji'"></a>
+                    <a href="#application-process"
+                        class="bg-white border-2 border-red-700 text-red-700 hover:bg-red-50 font-bold py-3 px-8 rounded-lg transition"
+                        x-text="language === 'en' ? 'View Admission Process' : 'Tazama Mchakato wa Uandikishaji'"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Academic Facilities Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Learning Environment' : 'Mazingira Yetu ya Kujifunza'"></h2>
+                <p class="text-lg text-charcoal max-w-2xl mx-auto"
+                    x-text="language === 'en' ? 'We provide modern facilities and resources to support effective teaching and learning experiences' : 'Tunatoa vifaa vya kisasa na rasilimali ili kuunga mkono ufundishaji bora na uzoefu wa kujifunza'">
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-deep-carmine text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Resource Library' : 'Maktaba ya Rasilimali'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Well-stocked library with age-appropriate books and learning materials' : 'Maktaba iliyojaa vitabu na nyenzo za kujifunza zinazofaa umri'">
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Technology Integration' : 'Ujumuishaji wa Teknolojia'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Digital learning tools to enhance educational experiences' : 'Vifaa vya kujifunza vya kidijitali ili kuboresha uzoefu wa kielimu'">
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-paint-brush text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Creative Spaces' : 'Nafasi za Ubunifu'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Dedicated areas for arts, music, and creative expression' : 'Maeneo maalum kwa sanaa, muziki, na kujieleza kwa ubunifu'">
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-seedling text-yellow-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Outdoor Learning' : 'Kujifunza Nje'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Safe outdoor areas for exploration and physical development' : 'Maeneo salama ya nje kwa ajili ya uchunguzi na maendeleo ya kimwili'">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section id="application-process" class="py-16 bg-white" x-data="{ language: 'en' }">
+        <div class="container mx-auto px-4">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Admission Process' : 'Mchakato wa Uandikishaji'">
+                </h2>
+                <p class="text-lg text-charcoal max-w-2xl mx-auto" x-text="language === 'en' 
+               ? 'Join our academic community and give your child the best start to their educational journey' 
+               : 'Jiunge na jamii yetu ya kitaaluma na uwe mwanzo mzuri kwa safari ya kielimu ya mtoto wako'">
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <!-- Left Column - Application Requirements -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-200">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-charcoal"
+                            x-text="language === 'en' ? 'Admission Requirements:' : 'Mahitaji ya Uandikishaji:'">
+                        </h3>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <!-- Requirement 1 -->
+                        <div class="requirement-card bg-red-50 rounded-xl p-4 border border-red-100">
+                            <div class="flex items-start">
+                                <div
+                                    class="bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-certificate text-sm"></i>
+                                </div>
+                                <p class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? 'A copy of the child\'s birth certificate' : 'Nakala ya cheti cha kuzaliwa cha mtoto'">
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Requirement 2 -->
+                        <div class="requirement-card bg-blue-50 rounded-xl p-4 border border-blue-100">
+                            <div class="flex items-start">
+                                <div
+                                    class="bg-blue-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-camera text-sm"></i>
+                                </div>
+                                <p class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? '3 passport size coloured photographs' : 'Picha 3 zenye rangi za ukubwa wa pasipoti'">
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Requirement 3 -->
+                        <div class="requirement-card bg-green-50 rounded-xl p-4 border border-green-100">
+                            <div class="flex items-start">
+                                <div
+                                    class="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-file-alt text-sm"></i>
+                                </div>
+                                <p class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? 'Academic report from previous school (if applicable)' : 'Ripoti ya kitaaluma kutoka shule ya awali (ikiwa inatumika)'">
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Requirement 4 -->
+                        <div class="requirement-card bg-yellow-50 rounded-xl p-4 border border-yellow-100">
+                            <div class="flex items-start">
+                                <div
+                                    class="bg-yellow-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-syringe text-sm"></i>
+                                </div>
+                                <p class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? 'Immunization card copy' : 'Nakala ya kadi ya chanjo'">
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Requirement 5 -->
+                        <div class="requirement-card bg-purple-50 rounded-xl p-4 border border-purple-100">
+                            <div class="flex items-start">
+                                <div
+                                    class="bg-purple-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-id-card text-sm"></i>
+                                </div>
+                                <p class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? 'Parent/Guardian ID copies' : 'Nakala za kitambulisho cha mzazi/mlezi'">
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Requirement 6 -->
+                        <div class="requirement-card bg-indigo-50 rounded-xl p-4 border border-indigo-100">
+                            <div class="flex items-start">
+                                <div
+                                    class="bg-indigo-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mt-1 mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope-open-text text-sm"></i>
+                                </div>
+                                <p class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? 'Clearance/Transfer letter with UPI/NEMIS (if applicable)' : 'Barua ya usafishaji/uhamisho yenye UPI/NEMIS (ikiwa inatumika)'">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-6">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-blue-700 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-1 mr-3 flex-shrink-0">
+                                <i class="fas fa-info text-xs"></i>
+                            </div>
+                            <p class="text-sm text-charcoal"
+                                x-text="language === 'en' 
+                           ? 'All documents should be submitted to the school office during working hours (Mon-Fri, 8:00 AM - 4:00 PM)' 
+                           : 'Nyaraka zote zinapaswa kuwasilishwa kwenye ofisi ya shule wakati wa masaa ya kazi (Jumatatu-Ijumaa, 8:00 asubuhi - 4:00 usiku)'">
+                            </p>
+                        </div>
+                    </div>
+
+                    <a href="contactus.html"
+                        class="bg-red-700 hover:bg-red-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg inline-block text-center w-full md:w-auto transition duration-300"
+                        x-text="language === 'en' ? 'Apply Now' : 'Ombi Sasa'">
+                    </a>
+                </div>
+
+                <!-- Right Column - Academic Calendar -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-200">
+                    <div class="text-center mb-6">
+                        <div
+                            class="bg-red-700 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-charcoal"
+                            x-text="language === 'en' ? 'Academic Calendar' : 'Kalenda ya Kitaaluma'">
+                        </h3>
+                        <p class="text-red-700 font-semibold mt-2"
+                            x-text="language === 'en' ? 'Application Deadlines' : 'Mwisho wa Maombi'">
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- First Term -->
+                        <div class="term-card bg-blue-50 rounded-xl p-5 border-l-4 border-blue-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'First Term' : 'Muhula wa Kwanza'">
+                                </h4>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
+                                    x-text="language === 'en' ? 'Jan to Apr' : 'Jan hadi Apr'">
+                                </span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-charcoal text-sm"
+                                    x-text="language === 'en' ? 'Application Deadline:' : 'Mwisho wa Maombi:'">
+                                </span>
+                                <span class="font-bold text-charcoal flex items-center">
+                                    <i class="fas fa-calendar-day text-red-700 mr-2"></i>
+                                    February 15
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Second Term -->
+                        <div class="term-card bg-green-50 rounded-xl p-5 border-l-4 border-green-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'Second Term' : 'Muhula wa Pili'">
+                                </h4>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full"
+                                    x-text="language === 'en' ? 'May to Aug' : 'Mei hadi Ago'">
+                                </span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-charcoal text-sm"
+                                    x-text="language === 'en' ? 'Application Deadline:' : 'Mwisho wa Maombi:'">
+                                </span>
+                                <span class="font-bold text-charcoal flex items-center">
+                                    <i class="fas fa-calendar-day text-red-700 mr-2"></i>
+                                    June 1
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Third Term -->
+                        <div class="term-card bg-purple-50 rounded-xl p-5 border-l-4 border-purple-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'Third Term' : 'Muhula wa Tatu'">
+                                </h4>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full"
+                                    x-text="language === 'en' ? 'Sept to Nov' : 'Sep hadi Nov'">
+                                </span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-charcoal text-sm"
+                                    x-text="language === 'en' ? 'Application Deadline:' : 'Mwisho wa Maombi:'">
+                                </span>
+                                <span class="font-bold text-charcoal flex items-center">
+                                    <i class="fas fa-calendar-day text-red-700 mr-2"></i>
+                                    September 20
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Current Continuing -->
+                        <div class="term-card bg-gray-50 rounded-xl p-5 border-l-4 border-gray-400">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'Current Continuing Students' : 'Wanafunzi Wenye Kuendelea'">
+                                </h4>
+                                <span class="bg-gray-200 text-charcoal text-xs font-semibold px-3 py-1 rounded-full"
+                                    x-text="language === 'en' ? 'Automatic' : 'Moja kwa moja'">
+                                </span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-charcoal text-sm"
+                                    x-text="language === 'en' ? 'Re-enrollment:' : 'Kujiandikisha tena:'">
+                                </span>
+                                <span class="font-bold text-charcoal flex items-center">
+                                    <i class="fas fa-check-circle text-red-700 mr-2"></i>
+                                    <span
+                                        x-text="language === 'en' ? 'No action required' : 'Hakuna hatua inayohitajika'"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="mt-8 p-5 bg-red-50 rounded-xl border border-red-200">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+                                <i class="fas fa-info text-sm"></i>
+                            </div>
+                            <p class="text-sm text-charcoal"
+                                x-text="language === 'en' 
+                           ? 'Applications are processed on a first-come, first-served basis. We recommend submitting your application well before the deadline to secure a place for your child.' 
+                           : 'Maombi yanashughulikiwa kwa kufuata utaratibu wa kwanza kufika, kwanza kuhudumiwa. Tunapendekeza kuwasilisha ombi lako kabla ya tarehe ya mwisho ili kuhakikisha nafasi kwa mtoto wako.'">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="mt-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-charcoal text-center mb-8"
+                    x-text="language === 'en' ? 'Admission Process Steps' : 'Hatua za Mchakato wa Uandikishaji'"></h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 text-center">
+                        <div
+                            class="bg-red-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                            1</div>
+                        <h4 class="text-lg font-bold text-charcoal mb-2"
+                            x-text="language === 'en' ? 'Submit Application' : 'Wasilisha Ombi'"></h4>
+                        <p class="text-charcoal text-sm"
+                            x-text="language === 'en' ? 'Complete and submit the application form with required documents' : 'Kamilisha na wasilisha fomu ya maombi pamoja na nyaraka zinazohitajika'">
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 text-center">
+                        <div
+                            class="bg-red-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                            2</div>
+                        <h4 class="text-lg font-bold text-charcoal mb-2"
+                            x-text="language === 'en' ? 'Assessment' : 'Tathmini'"></h4>
+                        <p class="text-charcoal text-sm"
+                            x-text="language === 'en' ? 'Student assessment and family interview (if required)' : 'Tathmini ya mwanafunzi na mahojiano ya familia (ikiwa inahitajika)'">
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 text-center">
+                        <div
+                            class="bg-red-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                            3</div>
+                        <h4 class="text-lg font-bold text-charcoal mb-2"
+                            x-text="language === 'en' ? 'Acceptance' : 'Kukubaliwa'"></h4>
+                        <p class="text-charcoal text-sm"
+                            x-text="language === 'en' ? 'Receive admission decision and acceptance letter' : 'Pokea uamuzi wa uandikishaji na barua ya kukubaliwa'">
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 text-center">
+                        <div
+                            class="bg-red-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                            4</div>
+                        <h4 class="text-lg font-bold text-charcoal mb-2"
+                            x-text="language === 'en' ? 'Complete Enrollment' : 'Kamilisha Uandikishaji'"></h4>
+                        <p class="text-charcoal text-sm"
+                            x-text="language === 'en' ? 'Pay fees and complete final registration process' : 'Lipa ada na kamilisha mchakato wa mwisho wa usajili'">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-deep-carmine text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6"
+                x-text="language === 'en' ? 'Begin Your Child\'s Academic Journey' : 'Anza Safari ya Kitaaluma ya Mtoto Wako'">
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto"
+                x-text="language === 'en' ? 'Enroll your child at Circle Spring Academy to experience our comprehensive academic programs designed for holistic development.' : 'Andikisha mtoto wako Circle Spring Academy kufurahia programu zetu kamili za kitaaluma zilizoundwa kwa maendeleo ya jumla.'">
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contactus.html"
+                    class="bg-white text-deep-carmine font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+                    x-text="language === 'en' ? 'Contact Admissions' : 'Wasiliana na Uandikishaji'"></a>
+                <a href="#academic-programs"
+                    class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-deep-carmine transition"
+                    x-text="language === 'en' ? 'View Programs' : 'Tazama Programu'"></a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-platinum text-charcoal py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring School Logo"
+                        class="h-16 w-16 rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Circle Spring' : 'Circle Spring'">
+                    </h3>
+                    <p class="text-slate-gray mb-6"
+                        x-text="language === 'en' ? 'Providing quality education in Thika since 2005. Nurturing young minds to become tomorrow leaders.' : 'Kutoa elimu bora huko Thika tangu 2005. Kulea akili za vijana kuwa viongozi wa kesho.'">
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/CircleSpringSchool"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/circlespringschool"
+                            class="border border-charcoal hover:bg-deep-carmine hover:text-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Quick Links' : 'Viungo vya Haraka'">
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Home' : 'Nyumbani'"></a></li>
+                        <li><a href="aboutcirclesprings.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'About Us' : 'Kuhusu Sisi'"></a></li>
+                        <li><a href="academics.html" class="text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                        <li><a href="activities.html" class="text-charcoal transition"
+                                x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                        <li><a href="contactus.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Programs' : 'Programu'"></h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Early Years' : 'Miaka ya Mapema'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Primary School' : 'Shule ya Msingi'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Enrichment Programs' : 'Programu za Uboreshaji'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'After School Care' : 'Huduma baada ya Shule'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Summer Camp' : 'Kambi ya Majira ya joto'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4"
+                        x-text="language === 'en' ? 'Contact Info' : 'Maelezo ya Mawasiliano'"></h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Salama Estate, Thika' : 'Eneo la Salama Estate, Thika'"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">+254 0111 427 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">circlespringschool@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Mon-Fri: 8:00AM - 4:00PM' : 'Jumatatu-Ijumaa: 8:00 asubuhi - 4:00 usiku'"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-gray text-center">
+                <p class="text-charcoal"
+                    x-text="language === 'en' ? '© Circle Spring School. All Rights Reserved.' : '© Shule ya Circle Spring. Haki zote zimehifadhiwa.'">
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 bg-charcoal text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>

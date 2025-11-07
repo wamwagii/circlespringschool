@@ -1,0 +1,126 @@
+body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Color Definitions */
+        .bg-platinum {
+            background-color: #E5E4E2;
+        }
+        .text-charcoal {
+            color: #36454F;
+        }
+        .bg-charcoal {
+            background-color: #36454F;
+        }
+        .text-vivid-burgundy {
+            color: #800020;
+        }
+        .bg-vivid-burgundy {
+            background-color: #800020;
+        }
+        .text-deep-carmine {
+            color: #A9203E;
+        }
+        .bg-deep-carmine {
+            background-color: #A9203E;
+        }
+        .text-slate-gray {
+            color: #708090;
+        }
+        .bg-slate-gray {
+            background-color: #708090;
+        }
+        
+        /* CTA Button Styles */
+        .cta-button {
+            background-color: #A9203E; /* Deep Carmine */
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #800020; /* Vivid Burgundy */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Language Dropdown */
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .language-dropdown-content a {
+            color: #36454F;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.2s;
+        }
+        .language-dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .language-dropdown:hover .language-dropdown-content {
+            display: block;
+        }
+        
+        /* Custom styles for other elements */
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .carousel-item {
+            transition: opacity 0.8s ease-in-out;
+        }
+        .carousel-indicator {
+            transition: all 0.3s ease;
+        }
+        .content-overlay {
+            background: rgba(0, 0, 0, 0);
+            backdrop-filter: blur(2px);
+        }
+        
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #A9203E; /* Deep Carmine */
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #800020; /* Vivid Burgundy */
+        }

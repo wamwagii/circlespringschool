@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en"
+    x-data="{ mobileMenuOpen: false, activeSection: 'contact', language: 'en', languageDropdownOpen: false }">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Circle Spring Academy Thika</title>
+    <meta name="description"
+        content="Get in touch with Circle Spring Academy in Salama Estate, Thika. Contact information, inquiries, and support for parents and students.">
+    <meta name="keywords"
+        content="Circle Spring Academy contact, Thika school admissions, Salama Estate school, primary education Thika">
+    <meta name="author" content="Circle Spring Academy">
+
+    <!-- Add preload for critical resources -->
+    <link rel="preload" href="src/js/app.js" as="script">
+    <link rel="preload" href="src/imgs/logo-BBA39KOS.webp" as="image">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        as="style">
+
+    <!-- Add Open Graph tags for social sharing -->
+    <meta property="og:title" content="Contact Us | Circle Spring Academy Thika">
+    <meta property="og:description"
+        content="Get in touch with Circle Spring Academy in Salama Estate, Thika for admissions and inquiries">
+    <meta property="og:image" content="src/imgs/logo-BBA39KOS.webp">
+    <meta property="og:url" content="https://www.circlespringschool.com/contactus.html">
+    <meta property="og:type" content="website">
+
+    <!-- Add Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Circle Spring Academy">
+    <meta name="twitter:description" content="Get in touch with Circle Spring Academy in Salama Estate, Thika">
+
+    <!-- Add canonical URL -->
+    <link rel="canonical" href="https://www.circlespringschool.com/contactus.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/imgs/logo-BBA39KOS.webp">
+
+    <link rel="stylesheet" href="src/styles/style.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Circle Spring Academy",
+      "description": "Circle Spring Academy in Salama Estate, Thika offers quality education with holistic development",
+      "url": "https://www.circlespringschool.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Salama Estate",
+        "addressLocality": "Thika",
+        "addressRegion": "Kiambu",
+        "addressCountry": "Kenya"
+      },
+      "telephone": "+254-111-427-110",
+      "email": "circlespringschool@gmail.com",
+      "areaServed": "Thika, Nairobi, Kenya",
+      "educationalLevel": "Primary education"
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #8B2635 0%, #C44569 100%);
+        }
+
+        .section-title {
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #8B2635;
+        }
+
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring School Logo" class="h-12 w-12 rounded-lg mr-3">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="academics.html" class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                    <li><a href="student-life.html"
+                            class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'"></a></li>
+                    <li><a href="activities.html" class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                    <li><a href="aboutcirclesprings.html"
+                            class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'About' : 'Kuhusu'"></a></li>
+                    <li><a href="contactus.html" class="font-semibold text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Contact' : 'Wasiliana'"></a></li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-charcoal px-3 py-1 rounded-md text-sm font-medium transition flex items-center">
+                        <span x-text="language === 'en' ? 'English' : 'Kiswahili'"></span>
+                        <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false"
+                            class="flex items-center hover:text-deep-carmine">
+                            <i class="fas fa-globe-americas mr-2 text-slate-gray"></i>
+                            English
+                        </a>
+                        <a href="#" @click="language = 'sw'; open = false"
+                            class="flex items-center hover:text-deep-carmine">
+                            <i class="fas fa-globe-africa mr-2 text-slate-gray"></i>
+                            Kiswahili
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <!-- Language Dropdown for Mobile -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-charcoal px-2 py-1 rounded text-xs font-medium flex items-center">
+                        <span x-text="language === 'en' ? 'EN' : 'SW'"></span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false" class="hover:text-deep-carmine">English</a>
+                        <a href="#" @click="language = 'sw'; open = false" class="hover:text-deep-carmine">Kiswahili</a>
+                    </div>
+                </div>
+
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="text-charcoal hover:text-deep-carmine text-xl transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white shadow-lg py-4 px-4">
+            <ul class="space-y-3">
+                <li>
+                    <a href="academics.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Academics' : 'Masomo'">
+                    </a>
+                </li>
+                <li>
+                    <a href="student-life.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false"
+                        x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'">
+                    </a>
+                </li>
+                <li>
+                    <a href="activities.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Activities' : 'Shughuli'">
+                    </a>
+                </li>
+                <li>
+                    <a href="aboutcirclesprings.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'About' : 'Kuhusu'">
+                    </a>
+                </li>
+                <li>
+                    <a href="contactus.html" class="block font-semibold text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Contact' : 'Wasiliana'">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-white ">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-deep-carmine"
+                x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-charcoal"
+                x-text="language === 'en' ? 'We are here to answer any questions you may have about Circle Spring Academy in Salama Estate, Thika.' : 'Tupo hapa kujibu maswali yoyote unayoweza kuwa nayo kuhusu Circle Spring Academy katika eneo la Salama Estate, Thika.'">
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-charcoal mb-6"
+                        x-text="language === 'en' ? 'Send us a Message' : 'Tutumie Ujumbe'"></h3>
+                    <form class="space-y-5" x-data="contactForm()" @submit.prevent="submitForm">
+                        <!-- Honeypot field for bots -->
+                        <div class="honeypot">
+                            <label for="website">Leave this field empty</label>
+                            <input type="text" id="website" name="website" x-model="formData.website">
+                        </div>
+
+                        <!-- Timestamp for form submission timing -->
+                        <input type="hidden" x-model="formData.timestamp">
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Full Name *' : 'Jina Kamili *'"></label>
+                            <input type="text" id="name" x-model="formData.name"
+                                :placeholder="language === 'en' ? 'Your Name' : 'Jina Lako'"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 transition"
+                                :class="errors.name ? 'border-red-500' : ''" required>
+                            <p x-show="errors.name" class="text-red-500 text-sm mt-1" x-text="errors.name"></p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-charcoal mb-2"
+                                    x-text="language === 'en' ? 'Email *' : 'Barua Pepe *'"></label>
+                                <input type="email" id="email" x-model="formData.email"
+                                    :placeholder="language === 'en' ? 'Your Email' : 'Barua Pepe Yako'"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 transition"
+                                    :class="errors.email ? 'border-red-500' : ''" required>
+                                <p x-show="errors.email" class="text-red-500 text-sm mt-1" x-text="errors.email"></p>
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-charcoal mb-2"
+                                    x-text="language === 'en' ? 'Phone Number' : 'Nambari ya Simu'"></label>
+                                <input type="tel" id="phone" x-model="formData.phone"
+                                    :placeholder="language === 'en' ? 'Phone Number' : 'Nambari ya Simu'"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="interest" class="block text-sm font-medium text-charcoal mb-2"
+                                x-text="language === 'en' ? 'I am interested in *' : 'Nina nia ya *'"></label>
+                            <select id="interest" x-model="formData.interest"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 transition"
+                                required>
+                                <option value="" disabled selected
+                                    x-text="language === 'en' ? 'Select an option...' : 'Chagua chaguo...'"></option>
+                                <option value="early-years"
+                                    x-text="language === 'en' ? 'Early Years Program' : 'Programu ya Miaka ya Mapema'">
+                                </option>
+                                <option value="primary"
+                                    x-text="language === 'en' ? 'Primary Program' : 'Programu ya Msingi'"></option>
+                                <option value="admissions"
+                                    x-text="language === 'en' ? 'Admissions Process' : 'Mchakato wa Uandikishaji'">
+                                </option>
+                                <option value="tour" x-text="language === 'en' ? 'School Tour' : 'Ziara ya Shule'">
+                                </option>
+                                <option value="other"
+                                    x-text="language === 'en' ? 'Other Inquiry' : 'Uchunguzi Mwingine'"></option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Message *' : 'Ujumbe *'"></label>
+                            <textarea id="message" rows="5" x-model="formData.message"
+                                :placeholder="language === 'en' ? 'Your Message' : 'Ujumbe Wako'"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 transition"
+                                :class="errors.message ? 'border-red-500' : ''" required></textarea>
+                            <p x-show="errors.message" class="text-red-500 text-sm mt-1" x-text="errors.message"></p>
+                        </div>
+
+                        <!-- Bot Protection Challenge -->
+                        <div x-show="showCaptcha" class="bg-gray-100 p-4 rounded-lg">
+                            <p class="text-sm text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Please solve this simple math problem:' : 'Tafadhali tatua shida hii rahisi ya hesabu:'">
+                            </p>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-bold" x-text="captchaQuestion"></span>
+                                <input type="number" x-model="captchaAnswer"
+                                    class="w-20 px-3 py-2 border border-gray-300 rounded" required>
+                            </div>
+                            <p x-show="captchaError" class="text-red-500 text-sm mt-1"
+                                x-text="language === 'en' ? 'Incorrect answer. Please try again.' : 'Jibu sahihi. Tafadhali jaribu tena.'">
+                            </p>
+                        </div>
+
+                        <button type="submit" :disabled="loading"
+                            class="bg-deep-carmine hover:bg-deep-carmine text-white font-bold py-4 px-8 rounded-lg transition duration-300 w-full flex items-center justify-center"
+                            :class="loading ? 'opacity-70 cursor-not-allowed' : ''">
+                            <span x-show="!loading" x-text="language === 'en' ? 'Send Message' : 'Tuma Ujumbe'"></span>
+                            <span x-show="loading" class="flex items-center">
+                                <i class="fas fa-spinner fa-spin mr-2"></i><span
+                                    x-text="language === 'en' ? 'Sending...' : 'Inatumwa...'"></span>
+                            </span>
+                        </button>
+
+                        <!-- Success Message -->
+                        <div x-show="success"
+                            class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"
+                            x-text="language === 'en' ? 'Thank you! Your message has been sent successfully. We will get back to you soon.' : 'Asante! Ujumbe wako umepelekwa kwa mafanikio. Tutawasiliana nawe hivi karibuni.'">
+                        </div>
+
+                        <!-- Error Message -->
+                        <div x-show="error" class="bg-red-100 border border-red-400 text-deep-carmine px-4 py-3 rounded"
+                            x-text="error"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Cards -->
+                <div>
+                    <h3 class="text-2xl font-bold text-charcoal mb-6"
+                        x-text="language === 'en' ? 'Other Ways to Reach Us' : 'Njia Zingine za Kutufikia'"></h3>
+
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Email Card -->
+                        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm contact-card">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-red-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-deep-carmine text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'Email Us' : 'Tutumie Barua Pepe'"></h4>
+                            </div>
+                            <p class="text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Send us an email and we will respond as soon as possible:' : 'Tutumie barua pepe na tutajibu haraka iwezekanavyo:'">
+                            </p>
+                            <a href="mailto:circlespringschool@gmail.com"
+                                class="text-deep-carmine font-medium hover:underline">circlespringschool@gmail.com</a>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm contact-card">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-red-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-deep-carmine text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'Call Us' : 'Tupigie Simu'"></h4>
+                            </div>
+                            <p class="text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Call us during school hours for immediate assistance:' : 'Tupigie simu wakati wa masaa ya shule kwa usaidizi wa haraka:'">
+                            </p>
+                            <a href="tel:+2540111427110" class="text-deep-carmine font-medium hover:underline">+254 0111
+                                427 110</a>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm contact-card">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-red-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-deep-carmine text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-charcoal"
+                                    x-text="language === 'en' ? 'Visit Us' : 'Tutembelee'"></h4>
+                            </div>
+                            <p class="text-charcoal mb-2"
+                                x-text="language === 'en' ? 'Come visit our campus in Salama Estate, Thika:' : 'Kuja utembelee chuo chetu katika eneo la Salama Estate, Thika:'">
+                            </p>
+                            <p class="text-charcoal font-medium">Salama Estate, Thika, Kenya</p>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="mt-6 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-lg font-bold text-charcoal mb-3"
+                            x-text="language === 'en' ? 'Office Hours' : 'Masaa ya Ofisi'"></h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-charcoal"
+                                    x-text="language === 'en' ? 'Monday - Friday' : 'Jumatatu - Ijumaa'"></span>
+                                <span class="text-charcoal font-medium">8:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-charcoal" x-text="language === 'en' ? 'Saturday' : 'Jumamosi'"></span>
+                                <span class="text-charcoal font-medium">9:00 AM - 1:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-charcoal" x-text="language === 'en' ? 'Sunday' : 'Jumapili'"></span>
+                                <span class="text-charcoal font-medium"
+                                    x-text="language === 'en' ? 'Closed' : 'Imefungwa'"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Location' : 'Eneo Letu'"></h2>
+                <p class="text-lg text-charcoal max-w-2xl mx-auto"
+                    x-text="language === 'en' ? 'Find us easily in Salama Estate, Thika. We look forward to welcoming you to our campus.' : 'Tutafute kwa urahisi katika eneo la Salama Estate, Thika. Tunangojea kukualika kwenye chuo chetu.'">
+                </p>
+            </div>
+
+            <div class="map-container">
+                <!-- Interactive Map -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1255.6923793292663!2d37.1654225!3d-1.0656713!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f511c751c150b%3A0x4a8e4a2cf250e99b!2sCircle%20spring%20academy!5e1!3m2!1sen!2ske!4v1762071379728!5m2!1sen!2ske"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Circle+Spring+Academy,Salama+Estate,Thika,Kenya"
+                    target="_blank"
+                    class="inline-flex items-center bg-deep-carmine hover:bg-deep-carmine text-white font-bold py-3 px-6 rounded-lg transition">
+                    <i class="fas fa-directions mr-2"></i>
+                    <span x-text="language === 'en' ? 'Get Directions' : 'Pata Maelekezo'"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-deep-carmine text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6"
+                x-text="language === 'en' ? 'Ready to Join Our Community?' : 'Uko Tayari Kujiunga na Jamii Yetu?'"></h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto"
+                x-text="language === 'en' ? 'Enroll your child at Circle Spring Academy to experience quality education with holistic development.' : 'Andikisha mtoto wako Circle Spring Academy kufurahia elimu bora na maendeleo ya jumla.'">
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contactus.html"
+                    class="bg-white text-deep-carmine font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+                    x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a>
+                <a href="academics.html"
+                    class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition"
+                    x-text="language === 'en' ? 'Admissions Info' : 'Maelezo ya Uandikishaji'"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-platinum text-charcoal py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring School Logo" class="h-16 w-16 rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Circle Spring' : 'Circle Spring'">
+                    </h3>
+                    <p class="text-slate-gray mb-6"
+                        x-text="language === 'en' ? 'Providing quality education in Thika since 2005. Nurturing young minds to become tomorrow leaders.' : 'Kutoa elimu bora huko Thika tangu 2005. Kulea akili za vijana kuwa viongozi wa kesho.'">
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/CircleSpringSchool"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/circlespringschool"
+                            class="border border-charcoal hover:bg-deep-carmine hover:text-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Quick Links' : 'Viungo vya Haraka'">
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="/index.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Home' : 'Nyumbani'"></a></li>
+                        <li><a href="index.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'About Us' : 'Kuhusu Sisi'"></a></li>
+                        <li><a href="/academics.html" class="text-charcoal transition"
+                                x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                        <li><a href="/activities.html" class="text-charcoal transition"
+                                x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                        <li><a href="/contactus.html" class="text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Programs' : 'Programu'"></h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Early Years' : 'Miaka ya Mapema'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Primary School' : 'Shule ya Msingi'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Enrichment Programs' : 'Programu za Uboreshaji'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'After School Care' : 'Huduma baada ya Shule'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Summer Camp' : 'Kambi ya Majira ya joto'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4"
+                        x-text="language === 'en' ? 'Contact Info' : 'Maelezo ya Mawasiliano'"></h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Salama Estate, Thika' : 'Eneo la Salama Estate, Thika'"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">+254 0111 427 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">circlespringschool@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Mon-Fri: 8:00AM - 4:00PM' : 'Jumatatu-Ijumaa: 8:00 asubuhi - 4:00 usiku'"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-gray text-center">
+                <p class="text-charcoal"
+                    x-text="language === 'en' ? '© Circle Spring School. All Rights Reserved.' : '© Shule ya Circle Spring. Haki zote zimehifadhiwa.'">
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 bg-charcoal text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Contact Form with Bot Protection
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('contactForm', () => ({
+                formData: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    interest: '',
+                    message: '',
+                    website: '', // Honeypot field
+                    timestamp: Date.now() // Form load timestamp
+                },
+                errors: {},
+                loading: false,
+                success: false,
+                error: '',
+                showCaptcha: false,
+                captchaQuestion: '',
+                captchaAnswer: '',
+                captchaError: false,
+                captchaValue: 0,
+
+                init() {
+                    // Generate a simple math problem for captcha
+                    this.generateCaptcha();
+                },
+
+                generateCaptcha() {
+                    const num1 = Math.floor(Math.random() * 10) + 1;
+                    const num2 = Math.floor(Math.random() * 10) + 1;
+                    this.captchaValue = num1 + num2;
+                    this.captchaQuestion = `${num1} + ${num2} = ?`;
+                },
+
+                validateForm() {
+                    this.errors = {};
+
+                    // Honeypot validation
+                    if (this.formData.website !== '') {
+                        this.errors.bot = 'Bot detected';
+                        return false;
+                    }
+
+                    // Form submission timing (too fast = likely bot)
+                    const submissionTime = Date.now();
+                    const formLoadTime = this.formData.timestamp;
+                    const timeDiff = submissionTime - formLoadTime;
+
+                    if (timeDiff < 3000) { // Less than 3 seconds
+                        this.showCaptcha = true;
+                        return false;
+                    }
+
+                    // Basic field validation
+                    if (!this.formData.name.trim()) {
+                        this.errors.name = 'Name is required';
+                    }
+
+                    if (!this.formData.email.trim()) {
+                        this.errors.email = 'Email is required';
+                    } else if (!this.isValidEmail(this.formData.email)) {
+                        this.errors.email = 'Please enter a valid email';
+                    }
+
+                    if (!this.formData.message.trim()) {
+                        this.errors.message = 'Message is required';
+                    }
+
+                    // Captcha validation if shown
+                    if (this.showCaptcha) {
+                        if (!this.captchaAnswer || parseInt(this.captchaAnswer) !== this.captchaValue) {
+                            this.captchaError = true;
+                            this.generateCaptcha(); // Regenerate on failure
+                            return false;
+                        }
+                    }
+
+                    return Object.keys(this.errors).length === 0;
+                },
+
+                isValidEmail(email) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return emailRegex.test(email);
+                },
+
+                async submitForm() {
+                    if (!this.validateForm()) {
+                        return;
+                    }
+
+                    this.loading = true;
+                    this.error = '';
+
+                    try {
+                        // Use mailto: to open user's email client
+                        await this.sendViaEmailClient();
+
+                        this.success = true;
+                        this.resetForm();
+
+                        // Hide success message after 8 seconds
+                        setTimeout(() => {
+                            this.success = false;
+                        }, 8000);
+                    } catch (err) {
+                        this.error = this.language === 'en'
+                            ? 'Sorry, there was an error preparing your email. Please try again or email us directly at circlespringschool@gmail.com.'
+                            : 'Samahani, kulikuwa na hitilafu katika kuandaa barua pepe yako. Tafadhali jaribu tena au tutumie barua pepe moja kwa moja kwa circlespringschool@gmail.com.';
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                async sendViaEmailClient() {
+                    // Construct email subject and body
+                    const subject = `Circle Spring Academy Inquiry: ${this.getInterestText(this.formData.interest)}`;
+                    const body = this.constructEmailBody();
+
+                    // Create mailto link
+                    const mailtoLink = `mailto:circlespringschool@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                    // Open email client
+                    window.location.href = mailtoLink;
+
+                    // Simulate a small delay for better UX
+                    return new Promise((resolve) => {
+                        setTimeout(resolve, 1000);
+                    });
+                },
+
+                getInterestText(interest) {
+                    const interests = {
+                        'early-years': this.language === 'en' ? 'Early Years Program' : 'Programu ya Miaka ya Mapema',
+                        'primary': this.language === 'en' ? 'Primary Program' : 'Programu ya Msingi',
+                        'admissions': this.language === 'en' ? 'Admissions Process' : 'Mchakato wa Uandikishaji',
+                        'tour': this.language === 'en' ? 'School Tour' : 'Ziara ya Shule',
+                        'other': this.language === 'en' ? 'Other Inquiry' : 'Uchunguzi Mwingine'
+                    };
+                    return interests[interest] || 'General Inquiry';
+                },
+
+                constructEmailBody() {
+                    const timestamp = new Date().toLocaleString();
+                    let body = '';
+
+                    if (this.language === 'en') {
+                        body = `Circle Spring Academy Contact Form Submission
+                    
+Name: ${this.formData.name}
+Email: ${this.formData.email}
+Phone: ${this.formData.phone || 'Not provided'}
+Interest: ${this.getInterestText(this.formData.interest)}
+
+Message:
+${this.formData.message}
+
+---
+Submitted on: ${timestamp}
+This message was sent via the Circle Spring Academy website contact form.`;
+                    } else {
+                        body = `Uwasilishaji wa Fomu ya Mawasiliano ya Circle Spring Academy
+
+Jina: ${this.formData.name}
+Barua Pepe: ${this.formData.email}
+Simu: ${this.formData.phone || 'Haijatolewa'}
+Lengo: ${this.getInterestText(this.formData.interest)}
+
+Ujumbe:
+${this.formData.message}
+
+---
+Iliwasilishwa tarehe: ${timestamp}
+Ujumbe huu ulitumwa kupitia fomu ya mawasiliano ya tovuti ya Circle Spring Academy.`;
+                    }
+
+                    return body;
+                },
+
+                resetForm() {
+                    this.formData = {
+                        name: '',
+                        email: '',
+                        phone: '',
+                        interest: '',
+                        message: '',
+                        website: '',
+                        timestamp: Date.now()
+                    };
+                    this.captchaAnswer = '';
+                    this.showCaptcha = false;
+                    this.generateCaptcha();
+                },
+
+                // Getter for language to use in methods
+                get language() {
+                    return Alpine.$data(document.querySelector('html')).language;
+                }
+            }));
+        });
+    </script>
+    <!-- Custom JavaScript -->
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>

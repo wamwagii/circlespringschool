@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ mobileMenuOpen: false, activeSection: 'about', language: 'en', languageDropdownOpen: false }">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Circle Spring Academy | Quality Education in Thika, Kenya</title>
+    <meta name="description"
+        content="Discover Circle Spring Academy in Salama Estate, Thika - a premier educational institution offering quality primary education since 2005. Our mission, vision, and commitment to holistic development.">
+    <meta name="keywords"
+        content="Circle Spring Academy about, Thika primary school, Salama Estate education, best schools in Thika, quality education Kenya, CBC curriculum Thika">
+    <meta name="author" content="Circle Spring Academy">
+
+    <!-- Add preload for critical resources -->
+    <link rel="preload" href="src/js/app.js" as="script">
+    <link rel="preload" href="src/imgs/logo-BBA39KOS.webp" as="image">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        as="style">
+
+    <!-- Add Open Graph tags for social sharing -->
+    <meta property="og:title" content="About Circle Spring Academy | Quality Education in Thika, Kenya">
+    <meta property="og:description"
+        content="Discover Circle Spring Academy in Salama Estate, Thika - offering quality primary education since 2005 with holistic development approach.">
+    <meta property="og:image" content="src/imgs/logo-BBA39KOS.webp">
+    <meta property="og:url" content="https://www.circlespringschool.com/aboutcirclesprings.html">
+    <meta property="og:type" content="website">
+
+    <!-- Add Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Circle Spring Academy">
+    <meta name="twitter:description"
+        content="Quality primary education in Thika since 2005 with holistic development approach">
+
+    <!-- Add canonical URL -->
+    <link rel="canonical" href="https://www.circlespringschool.com/aboutcirclesprings.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/imgs/logo-BBA39KOS.webp">
+
+    <link rel="stylesheet" href="src/styles/style.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Circle Spring Academy",
+      "description": "Circle Spring Academy in Salama Estate, Thika offers quality education with holistic development through comprehensive academic programs",
+      "url": "https://www.circlespringschool.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Salama Estate",
+        "addressLocality": "Thika",
+        "addressRegion": "Kiambu",
+        "addressCountry": "Kenya"
+      },
+      "telephone": "+254-111-427-110",
+      "email": "circlespringschool@gmail.com",
+      "foundingDate": "2005",
+      "areaServed": "Thika, Nairobi, Kenya",
+      "educationalLevel": "Primary education",
+      "award": "Best Primary School in Thika 2023",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Educational Programs",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "EducationalOccupationalProgram",
+              "name": "Early Years Program",
+              "description": "Play-based learning for children aged 2-6 years"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "EducationalOccupationalProgram",
+              "name": "Primary Education",
+              "description": "Comprehensive primary education following CBC curriculum"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #8B2635 0%, #C44569 100%);
+        }
+
+        .section-title {
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #8B2635;
+        }
+
+        .value-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8B2635;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 17px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: #e5e7eb;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring Academy Logo - Quality Education in Thika"
+                        class="h-12 w-12 rounded-lg mr-3">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="academics.html" class="font-semibold text-gray-800 hover:text-red-700 transition"
+                            x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                    <li><a href="student-life.html" class="font-semibold text-gray-800 hover:text-red-700 transition"
+                            x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'"></a></li>
+                    <li><a href="activities.html" class="font-semibold text-gray-800 hover:text-red-700 transition"
+                            x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                    <li><a href="aboutcirclesprings.html" class="font-semibold text-red-700 transition"
+                            x-text="language === 'en' ? 'About' : 'Kuhusu'"></a></li>
+                    <li><a href="contactus.html" class="font-semibold text-gray-800 hover:text-red-700 transition"
+                            x-text="language === 'en' ? 'Contact' : 'Wasiliana'"></a></li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1 rounded-md text-sm font-medium transition flex items-center">
+                        <span x-text="language === 'en' ? 'English' : 'Kiswahili'"></span>
+                        <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false" class="flex items-center hover:text-red-700">
+                            <i class="fas fa-globe-americas mr-2 text-gray-600"></i>
+                            English
+                        </a>
+                        <a href="#" @click="language = 'sw'; open = false" class="flex items-center hover:text-red-700">
+                            <i class="fas fa-globe-africa mr-2 text-gray-600"></i>
+                            Kiswahili
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <!-- Language Dropdown for Mobile -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs font-medium flex items-center">
+                        <span x-text="language === 'en' ? 'EN' : 'SW'"></span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false" class="hover:text-red-700">English</a>
+                        <a href="#" @click="language = 'sw'; open = false" class="hover:text-red-700">Kiswahili</a>
+                    </div>
+                </div>
+
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="text-gray-800 hover:text-red-700 text-xl transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white shadow-lg py-4 px-4">
+            <ul class="space-y-3">
+                <li>
+                    <a href="academics.html"
+                        class="block font-semibold text-gray-800 hover:text-red-700 transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Academics' : 'Masomo'">
+                    </a>
+                </li>
+                <li>
+                    <a href="student-life.html"
+                        class="block font-semibold text-gray-800 hover:text-red-700 transition py-2"
+                        @click="mobileMenuOpen = false"
+                        x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'">
+                    </a>
+                </li>
+                <li>
+                    <a href="activities.html"
+                        class="block font-semibold text-gray-800 hover:text-red-700 transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Activities' : 'Shughuli'">
+                    </a>
+                </li>
+                <li>
+                    <a href="aboutcirclesprings.html" class="block font-semibold text-red-700 transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'About' : 'Kuhusu'">
+                    </a>
+                </li>
+                <li>
+                    <a href="contactus.html"
+                        class="block font-semibold text-gray-800 hover:text-red-700 transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Contact' : 'Wasiliana'">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+                x-text="language === 'en' ? 'About Circle Spring Academy' : 'Kuhusu Circle Spring Academy'"></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto"
+                x-text="language === 'en' ? 'Nurturing young minds for a brighter future through quality education and holistic development since 2005.' : 'Kulea akili za vijana kwa mustakabali mwanga kupitia elimu bora na maendeleo ya jumla tangu 2005.'">
+            </p>
+            <a href="#our-story"
+                class="bg-white text-red-700 font-bold py-4 px-8 rounded-full inline-block hover:bg-gray-100 transition">Discover
+                Our Story</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold mb-4"
+                        x-text="language === 'en' ? 'Our Journey' : 'Safari Yetu'"></span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 section-title"
+                        x-text="language === 'en' ? 'Our Story' : 'Hadithi Yetu'"></h2>
+
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed"
+                            x-text="language === 'en' ? 'Founded in 2005, Circle Spring Academy began as a small educational initiative in Salama Estate, Thika, with a vision to provide quality education that nurtures both academic excellence and character development.' : 'Ilianzishwa mwaka 2005, Circle Spring Academy ilianza kama mpango mdogo wa kielimu katika eneo la Salama Estate, Thika, kwa ndoto ya kutoa elimu bora ambayo inalea ubora wa kitaaluma na maendeleo ya tabia.'">
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed"
+                            x-text="language === 'en' ? 'Over the years, we have grown into a respected educational institution, known for our commitment to holistic development and our innovative approach to the Competency-Based Curriculum (CBC).' : 'Kwa kipindi cha miaka, tumekua kuwa taasisi ya kielimu yenye heshima, inayojulikana kwa kujitolea kwetu kwa maendeleo ya jumla na mbinu yetu ya uvumbuzi kwa Mtaala wa Msingi wa Uwezo (CBC).'">
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed"
+                            x-text="language === 'en' ? 'Today, we continue to build on our legacy of excellence, preparing students not just for academic success, but for life-long learning and responsible citizenship.' : 'Leo, tunaendelea kujenga juu ya urithi wetu wa ubora, tukiwaandaa wanafunzi si tu kwa mafanikio ya kitaaluma, bali kwa kujifunza maisha yote na uraia wenye wajibikaji.'">
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-700 mb-2">18+</div>
+                            <div class="text-gray-600"
+                                x-text="language === 'en' ? 'Years of Excellence' : 'Miaka ya Ubora'"></div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-700 mb-2">500+</div>
+                            <div class="text-gray-600"
+                                x-text="language === 'en' ? 'Students Enrolled' : 'Wanafunzi Waliandikishwa'"></div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-700 mb-2">98%</div>
+                            <div class="text-gray-600"
+                                x-text="language === 'en' ? 'Parent Satisfaction' : 'Uridhisho wa Wazazi'"></div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-700 mb-2">25+</div>
+                            <div class="text-gray-600"
+                                x-text="language === 'en' ? 'Qualified Staff' : 'Wafanyakazi Waliohitimu'"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative rounded-lg overflow-hidden">
+                        <img src="src/imgs/logo-BBA39KOS.webp"
+                            alt="Circle Spring Academy campus in Salama Estate, Thika" class="w-full h-96 object-cover">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Mission & Vision' : 'Dhamira na Ndoto Yetu'"></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Mission -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="bg-deep-carmine text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-bullseye text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800"
+                            x-text="language === 'en' ? 'Our Mission' : 'Dhamira Yetu'"></h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed"
+                        x-text="language === 'en' ? 'To provide a nurturing and stimulating learning environment that empowers students to achieve academic excellence, develop strong character, and become responsible global citizens through innovative teaching methods and holistic development approaches.' : 'Kutoa mazingira ya kujifunza ya kulea na kuchochea ambayo yanawawezesha wanafunzi kufikia ubora wa kitaaluma, kuendeleza tabia nzuri, na kuwa raia wa kimataifa wenye wajibikaji kupitia mbinu za kufundisha za uvumbuzi na mbinu za maendeleo ya jumla.'">
+                    </p>
+                </div>
+
+                <!-- Vision -->
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-eye text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800"
+                            x-text="language === 'en' ? 'Our Vision' : 'Ndoto Yetu'"></h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed"
+                        x-text="language === 'en' ? 'To be the leading educational institution in Thika that shapes future leaders through excellence in education, character development, and innovative learning experiences, preparing students to thrive in a rapidly changing world.' : 'Kuwa taasisi ya kielimu inayoongoza Thika ambayo huunda viongozi wa baadaye kupitia ubora katika elimu, maendeleo ya tabia, na uzoefu wa kujifunza wa uvumbuzi, ikiwaandaa wanafunzi kustawi katika ulimwengu unaobadilika kwa kasi.'">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Core Values' : 'Thamani Zetu za Msingi'"></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto"
+                    x-text="language === 'en' ? 'The principles that guide everything we do at Circle Spring Academy' : 'Kanuni zinazoongoza kila kitu tunachofanya katika Circle Spring Academy'">
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Value 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 value-card">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-red-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3"
+                        x-text="language === 'en' ? 'Excellence' : 'Ubora'"></h3>
+                    <p class="text-gray-600"
+                        x-text="language === 'en' ? 'We strive for the highest standards in academics, character development, and all aspects of school life.' : 'Tunajitahidi kwa viwango vya juu zaidi katika masomo, maendeleo ya tabia, na pande zote za maisha ya shule.'">
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 value-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3" x-text="language === 'en' ? 'Nurturing' : 'Kulea'">
+                    </h3>
+                    <p class="text-gray-600"
+                        x-text="language === 'en' ? 'We provide a caring and supportive environment where every child can thrive and reach their full potential.' : 'Tunatoa mazingira ya kujali na ya kuunga mkono ambapo kila mtoto anaweza kustawi na kufikia uwezo wao kamili.'">
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 value-card">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3" x-text="language === 'en' ? 'Community' : 'Jamii'">
+                    </h3>
+                    <p class="text-gray-600"
+                        x-text="language === 'en' ? 'We foster strong partnerships between students, parents, staff, and the wider community.' : 'Tunakuza ushirikiano imara kati ya wanafunzi, wazazi, wafanyakazi, na jamii pana zaidi.'">
+                    </p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 value-card">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-purple-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3"
+                        x-text="language === 'en' ? 'Innovation' : 'Uvumbuzi'"></h3>
+                    <p class="text-gray-600"
+                        x-text="language === 'en' ? 'We embrace new ideas and technologies to enhance learning and prepare students for the future.' : 'Tunakubali maono mapya na teknolojia ili kuboresha kujifunza na kuwaandaa wanafunzi kwa mustakabali.'">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-deep-carmine text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6"
+                x-text="language === 'en' ? 'Join Our Educational Community' : 'Jiunge na Jamii Yetu ya Kielimu'"></h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto"
+                x-text="language === 'en' ? 'Become part of the Circle Spring Academy family and give your child the foundation for a successful future.' : 'Kuwa sehemu ya familia ya Circle Spring Academy na uwe msingi kwa mtoto wako kwa mustakabali wenye mafanikio.'">
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contactus.html"
+                    class="bg-white text-red-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+                    x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a>
+                <a href="academics.html"
+                    class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-red-700 transition"
+                    x-text="language === 'en' ? 'View Programs' : 'Tazama Programu'"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-platinum text-charcoal py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring School Logo"
+                        class="h-16 w-16 rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Circle Spring' : 'Circle Spring'">
+                    </h3>
+                    <p class="text-slate-gray mb-6"
+                        x-text="language === 'en' ? 'Providing quality education in Thika since 2005. Nurturing young minds to become tomorrow leaders.' : 'Kutoa elimu bora huko Thika tangu 2005. Kulea akili za vijana kuwa viongozi wa kesho.'">
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/CircleSpringSchool"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/circlespringschool"
+                            class="border border-charcoal hover:bg-deep-carmine hover:text-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Quick Links' : 'Viungo vya Haraka'">
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Home' : 'Nyumbani'"></a></li>
+                        <li><a href="aboutcirclesprings.html" class="text-deep-carmine transition"
+                                x-text="language === 'en' ? 'About Us' : 'Kuhusu Sisi'"></a></li>
+                        <li><a href="academics.html" class="text-charcoal transition"
+                                x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                        <li><a href="activities.html" class="text-charcoal transition"
+                                x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                        <li><a href="contactus.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Programs' : 'Programu'"></h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Early Years' : 'Miaka ya Mapema'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Primary School' : 'Shule ya Msingi'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Enrichment Programs' : 'Programu za Uboreshaji'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'After School Care' : 'Huduma baada ya Shule'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Summer Camp' : 'Kambi ya Majira ya joto'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4"
+                        x-text="language === 'en' ? 'Contact Info' : 'Maelezo ya Mawasiliano'"></h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Salama Estate, Thika' : 'Eneo la Salama Estate, Thika'"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">+254 0111 427 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">circlespringschool@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Mon-Fri: 8:00AM - 4:00PM' : 'Jumatatu-Ijumaa: 8:00 asubuhi - 4:00 usiku'"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-gray text-center">
+                <p class="text-charcoal"
+                    x-text="language === 'en' ? '© Circle Spring School. All Rights Reserved.' : '© Shule ya Circle Spring. Haki zote zimehifadhiwa.'">
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 bg-charcoal text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>

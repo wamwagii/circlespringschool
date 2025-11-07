@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en"
+    x-data="{ mobileMenuOpen: false, activeSection: 'activities', language: 'en', languageDropdownOpen: false }">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Activities & Extracurricular Programs | Circle Spring Academy Thika</title>
+    <meta name="description"
+        content="Explore diverse student activities at Circle Spring Academy in Salama Estate, Thika. Sports, arts, clubs & community programs for holistic development.">
+    <meta name="keywords"
+        content="school activities Thika, extracurricular programs Salama Estate, student clubs Kenya, sports activities Thika, arts programs Circle Spring Academy, community service Kenya">
+    <meta name="author" content="Circle Spring Academy">
+
+    <!-- Add preload for critical resources -->
+    <link rel="preload" href="src/js/app.js" as="script">
+    <link rel="preload" href="src/imgs/logo-BBA39KOS.webp" as="image">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        as="style">
+
+    <!-- Add Open Graph tags for social sharing -->
+    <meta property="og:title" content="Student Activities & Extracurricular Programs | Circle Spring Academy Thika">
+    <meta property="og:description"
+        content="Sports, arts, clubs & community programs for holistic student development at Circle Spring Academy in Salama Estate, Thika">
+    <meta property="og:image" content="src/imgs/logo-BBA39KOS.webp">
+    <meta property="og:url" content="https://www.circlespringschool.com/activities.html">
+    <meta property="og:type" content="website">
+
+    <!-- Add Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Student Activities at Circle Spring Academy">
+    <meta name="twitter:description" content="Sports, arts, clubs & community programs for holistic development">
+
+    <!-- Add canonical URL -->
+    <link rel="canonical" href="https://www.circlespringschool.com/activities.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/imgs/logo-BBA39KOS.webp">
+
+    <link rel="stylesheet" href="src/styles/style.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Circle Spring Academy",
+      "description": "Circle Spring Academy in Salama Estate, Thika offers quality education with holistic development through diverse student activities",
+      "url": "https://www.circlespringschool.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Salama Estate",
+        "addressLocality": "Thika",
+        "addressRegion": "Kiambu",
+        "addressCountry": "Kenya"
+      },
+      "telephone": "+254-111-427-110",
+      "email": "circlespringschool@gmail.com",
+      "areaServed": "Thika, Nairobi, Kenya",
+      "educationalLevel": "Primary education",
+      "makesOffer": [{
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sports Activities",
+          "description": "Football, basketball, athletics and other sports programs"
+        }
+      }, {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Arts Programs",
+          "description": "Music, drama, art and creative expression activities"
+        }
+      }, {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Student Clubs",
+          "description": "Science club, debate club, environmental club and more"
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #8B2635 0%, #C44569 100%);
+        }
+
+        .activity-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #8B2635;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring School Logo"
+                        class="h-12 w-12 rounded-lg mr-3">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="academics.html" class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                    <li><a href="student-life.html"
+                            class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'"></a></li>
+                    <li><a href="activities.html" class="font-semibold text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                    <li><a href="aboutcirclesprings.html"
+                            class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'About' : 'Kuhusu'"></a></li>
+                    <li><a href="contactus.html" class="font-semibold text-charcoal hover:text-deep-carmine transition"
+                            x-text="language === 'en' ? 'Contact' : 'Wasiliana'"></a></li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-charcoal px-3 py-1 rounded-md text-sm font-medium transition flex items-center">
+                        <span x-text="language === 'en' ? 'English' : 'Kiswahili'"></span>
+                        <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false"
+                            class="flex items-center hover:text-deep-carmine">
+                            <i class="fas fa-globe-americas mr-2 text-slate-gray"></i>
+                            English
+                        </a>
+                        <a href="#" @click="language = 'sw'; open = false"
+                            class="flex items-center hover:text-deep-carmine">
+                            <i class="fas fa-globe-africa mr-2 text-slate-gray"></i>
+                            Kiswahili
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <!-- Language Dropdown for Mobile -->
+                <div class="language-dropdown" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="bg-gray-100 hover:bg-gray-200 text-charcoal px-2 py-1 rounded text-xs font-medium flex items-center">
+                        <span x-text="language === 'en' ? 'EN' : 'SW'"></span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="language-dropdown-content">
+                        <a href="#" @click="language = 'en'; open = false" class="hover:text-deep-carmine">English</a>
+                        <a href="#" @click="language = 'sw'; open = false" class="hover:text-deep-carmine">Kiswahili</a>
+                    </div>
+                </div>
+
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="text-charcoal hover:text-deep-carmine text-xl transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white shadow-lg py-4 px-4">
+            <ul class="space-y-3">
+                <li>
+                    <a href="academics.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Academics' : 'Masomo'">
+                    </a>
+                </li>
+                <li>
+                    <a href="student-life.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false"
+                        x-text="language === 'en' ? 'Student Life' : 'Maisha ya Wanafunzi'">
+                    </a>
+                </li>
+                <li>
+                    <a href="activities.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Activities' : 'Shughuli'">
+                    </a>
+                </li>
+                <li>
+                    <a href="aboutcirclesprings.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'About' : 'Kuhusu'">
+                    </a>
+                </li>
+                <li>
+                    <a href="contactus.html"
+                        class="block font-semibold text-charcoal hover:text-deep-carmine transition py-2"
+                        @click="mobileMenuOpen = false" x-text="language === 'en' ? 'Contact' : 'Wasiliana'">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+                x-text="language === 'en' ? 'Student Activities & Programs' : 'Shughuli za Wanafunzi'"></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto"
+                x-text="language === 'en' ? 'At Circle Spring Academy, we believe in nurturing well-rounded individuals through diverse extracurricular activities that complement academic learning.' : 'Katika Circle Spring Academy, tunaamini katika kulea watu wenye ujuzi mwingi kupitia shughuli mbalimbali za ziada zinazokamilisha kujifunza kitaaluma.'">
+            </p>
+            <a href="#activities-overview"
+                class="bg-white text-deep-carmine font-bold py-4 px-8 rounded-full inline-block hover:bg-gray-100 transition">Explore
+                Our Activities</a>
+        </div>
+    </section>
+
+    <!-- Activities Overview -->
+    <section id="activities-overview" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Our Diverse Activities Program' : 'Programu Yetu ya Shughuli'"></h2>
+                <p class="text-lg text-charcoal max-w-3xl mx-auto mt-6"
+                    x-text="language === 'en' ? 'We offer a wide range of activities designed to develop talents, build character, and foster teamwork among our students.' : 'Tunatoa anuwai ya shughuli zilizoundwa kukuza vipawa, kujenga tabia, na kukuza ushirikiano miongoni mwa wanafunzi wetu.'">
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sports Activities -->
+                <div class="bg-white shadow-md p-6 activity-card border-t-4 border-red-700">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-running text-deep-carmine text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3"
+                        x-text="language === 'en' ? 'Sports & Athletics' : 'Michezo na Riadha'"></h3>
+                    <p class="text-charcoal mb-4"
+                        x-text="language === 'en' ? 'Develop physical fitness, teamwork and sportsmanship through various athletic programs.' : 'Kukuza uwezo wa mwili, ushirikiano na uhusiano mzuri kupitia programu mbalimbali za riadha.'">
+                    </p>
+                    <ul class="text-charcoal space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-deep-carmine mr-2"></i> <span
+                                x-text="language === 'en' ? 'Football & Basketball' : 'Mpira wa miguu na Mpira wa kikapu'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-deep-carmine mr-2"></i> <span
+                                x-text="language === 'en' ? 'Athletics & Track Events' : 'Riadha na Mashindano ya Mkimbio'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-deep-carmine mr-2"></i> <span
+                                x-text="language === 'en' ? 'Swimming Lessons' : 'Masomo ya kuogelea'"></span></li>
+                    </ul>
+                </div>
+
+                <!-- Arts & Culture -->
+                <div class="bg-white shadow-md p-6 activity-card border-t-4 border-purple-600">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3"
+                        x-text="language === 'en' ? 'Arts & Culture' : 'Sanaa na Utamaduni'"></h3>
+                    <p class="text-charcoal mb-4"
+                        x-text="language === 'en' ? 'Explore creativity through music, drama, visual arts and cultural activities.' : 'Chunguza ubunifu kupitia muziki, michezo ya kuigiza, sanaa ya kuona na shughuli za kitamaduni.'">
+                    </p>
+                    <ul class="text-charcoal space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Music & Choir' : 'Muziki na Kwaya'"></span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Drama & Performing Arts' : 'Michezo ya Kuigiza na Sanaa ya Maonyesho'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Art & Craft Club' : 'Klabu ya Sanaa na Ufundi'"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Academic Clubs -->
+                <div class="bg-white shadow-md p-6 activity-card border-t-4 border-blue-600">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3"
+                        x-text="language === 'en' ? 'Academic Clubs' : 'Vikundi vya Masomo'"></h3>
+                    <p class="text-charcoal mb-4"
+                        x-text="language === 'en' ? 'Enhance learning through specialized clubs that explore academic interests in depth.' : 'Boresha kujifunza kupitia vilabu maalum vinavyochunguza masilahi ya kitaaluma kwa kina.'">
+                    </p>
+                    <ul class="text-charcoal space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Science & Technology Club' : 'Klabu ya Sayansi na Teknolojia'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Debate & Public Speaking' : 'Majadiliano na Hotuba ya Umma'"></span>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> <span
+                                x-text="language === 'en' ? 'Math Club' : 'Klabu ya Hisabati'"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Activities Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Featured Student Activities' : 'Shughuli Maarufu za Wanafunzi'"></h2>
+                <p class="text-lg text-charcoal max-w-3xl mx-auto mt-6"
+                    x-text="language === 'en' ? 'Discover some of our most popular extracurricular programs that students love participating in.' : 'Gundua baadhi ya programu zetu maarufu za ziada ambazo wanafunzi hupenda kushiriki.'">
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Sports Day -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 flex items-center justify-center">
+                        <img src="src/imgs/sports.webp" alt="Annual Sports Day" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-charcoal mb-3"
+                            x-text="language === 'en' ? 'Annual Sports Day' : 'Siku ya Michezo ya Mwaka'"></h3>
+                        <p class="text-charcoal mb-4"
+                            x-text="language === 'en' ? 'Our biggest sporting event of the year where students compete in various athletic activities and team sports.' : 'Tukio kubwa la michezo la mwaka ambapo wanafunzi hushindana katika shughuli mbalimbali za riadha na michezo ya timu.'">
+                        </p>
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span x-text="language === 'en' ? 'Held every July' : 'Hufanyika kila Julai'"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural Festival -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 flex items-center justify-center">
+                        <img src="src/imgs/culture.webp" alt="Cultural Festival" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-charcoal mb-3"
+                            x-text="language === 'en' ? 'Cultural Festival' : 'Tamasha la Kitamaduni'"></h3>
+                        <p class="text-charcoal mb-4"
+                            x-text="language === 'en' ? 'A celebration of diverse cultures through music, dance, drama, and traditional performances.' : 'Sherehe ya tamaduni mbalimbali kupitia muziki, ngoma, michezo ya kuigiza, na maonyesho ya kitamaduni.'">
+                        </p>
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span x-text="language === 'en' ? 'Held every October' : 'Hufanyika kila Oktoba'"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4 section-title inline-block"
+                    x-text="language === 'en' ? 'Benefits of Our Activities Program' : 'Faida za Programu Yetu ya Shughuli'">
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-deep-carmine text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Cognitive Development' : 'Ukuzaji wa Akili'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Activities stimulate critical thinking and problem-solving skills.' : 'Shughuli huchochea fikira za kina na ujuzi wa kutatua matatizo.'">
+                    </p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Social Skills' : 'Ujuzi wa Kijamii'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Build communication, teamwork and leadership abilities.' : 'Kujenga uwezo wa mawasiliano, ushirikiano na uongozi.'">
+                    </p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Physical Health' : 'Afya ya Kimwili'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Promote fitness, coordination and healthy lifestyle habits.' : 'Kuendeleza uwezo wa mwili, uratibu na tabia za maisha yenye afya.'">
+                    </p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-yellow-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2"
+                        x-text="language === 'en' ? 'Talent Discovery' : 'Ugunduzi wa Vipawa'"></h3>
+                    <p class="text-charcoal"
+                        x-text="language === 'en' ? 'Help students discover and nurture their unique talents and interests.' : 'Kusaidia wanafunzi kugundua na kulea vipawa vyao na masilahi ya kipekee.'">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-deep-carmine text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6"
+                x-text="language === 'en' ? 'Join Our Exciting Activities Program' : 'Jiunge na Programu Yetu ya Shughuli'">
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto"
+                x-text="language === 'en' ? 'Enroll your child at Circle Spring Academy to experience our diverse extracurricular activities that complement academic learning.' : 'Andikisha mtoto wako Circle Spring Academy kufurahia shughuli zetu mbalimbali za ziada zinazokamilisha kujifunza kitaaluma.'">
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contactus.html"
+                    class="bg-white text-deep-carmine font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+                    x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a>
+                <a href="admissions.html"
+                    class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-deep-carmine transition"
+                    x-text="language === 'en' ? 'Admissions Info' : 'Maelezo ya Uandikishaji'"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-platinum text-charcoal py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="src/imgs/logo-BBA39KOS.webp" alt="Circle Spring School Logo"
+                        class="h-16 w-16 rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Circle Spring' : 'Circle Spring'">
+                    </h3>
+                    <p class="text-slate-gray mb-6"
+                        x-text="language === 'en' ? 'Providing quality education in Thika since 2005. Nurturing young minds to become tomorrow leaders.' : 'Kutoa elimu bora huko Thika tangu 2005. Kulea akili za vijana kuwa viongozi wa kesho.'">
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/CircleSpringSchool"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/circlespringschool"
+                            class="border border-charcoal hover:bg-deep-carmine hover:text-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="border border-charcoal hover:bg-deep-carmine w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Quick Links' : 'Viungo vya Haraka'">
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Home' : 'Nyumbani'"></a></li>
+                        <li><a href="aboutcirclesprings.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'About Us' : 'Kuhusu Sisi'"></a></li>
+                        <li><a href="academics.html" class="text-charcoal transition"
+                                x-text="language === 'en' ? 'Academics' : 'Masomo'"></a></li>
+                        <li><a href="activities.html" class="text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Activities' : 'Shughuli'"></a></li>
+                        <li><a href="contactus.html" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Contact Us' : 'Wasiliana Nasi'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4" x-text="language === 'en' ? 'Programs' : 'Programu'"></h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Early Years' : 'Miaka ya Mapema'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Primary School' : 'Shule ya Msingi'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Enrichment Programs' : 'Programu za Uboreshaji'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'After School Care' : 'Huduma baada ya Shule'"></a></li>
+                        <li><a href="#" class="text-charcoal hover:text-deep-carmine transition"
+                                x-text="language === 'en' ? 'Summer Camp' : 'Kambi ya Majira ya joto'"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4"
+                        x-text="language === 'en' ? 'Contact Info' : 'Maelezo ya Mawasiliano'"></h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Salama Estate, Thika' : 'Eneo la Salama Estate, Thika'"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">+254 0111 427 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal">circlespringschool@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-deep-carmine mt-1 mr-3"></i>
+                            <span class="text-charcoal"
+                                x-text="language === 'en' ? 'Mon-Fri: 8:00AM - 4:00PM' : 'Jumatatu-Ijumaa: 8:00 asubuhi - 4:00 usiku'"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-gray text-center">
+                <p class="text-charcoal"
+                    x-text="language === 'en' ? '© Circle Spring School. All Rights Reserved.' : '© Shule ya Circle Spring. Haki zote zimehifadhiwa.'">
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 bg-charcoal text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Custom JavaScript -->
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>
